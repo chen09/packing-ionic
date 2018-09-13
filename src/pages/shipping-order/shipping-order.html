@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'SHIPPING_ORDER_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form (submit)="query()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>{{ 'SHIPPING_ORDER_NUMBER' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="number" name="number"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button color="primary" block (click)="clear()">{{ 'CLEAR' | translate }}</button>
+      </div>
+
+      <div padding>
+        <button ion-button color="primary" block>{{ 'QUERY' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>
