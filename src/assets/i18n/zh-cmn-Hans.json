@@ -1,4 +1,18 @@
 {
+
+
+  "TOKEN_TITLE": "输入Token",
+  "TOKEN": "Token",
+  "ENTER": "进入系统",
+
+  "SHIPPING_ORDER_TITLE": "查询Shipping Order",
+  "SHIPPING_ORDER_NUMBER": "Shipping Order号码",
+  "QUERY": "查询",
+
+
+  "PACKING_TITLE": "装箱",
+
+
   "BACK_BUTTON_TEXT": "回退",
 
   "NAME": "姓名",

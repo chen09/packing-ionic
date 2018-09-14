@@ -1,0 +1,28 @@
+{
+  "Content": [
+    {
+      "scan_job_id": "d3291a77-651f-4b7a-bde2-a929014595b0",
+      "Sku_id": 137895,
+      "Sku_cd": "00001D1C",
+      "Bar_code": "111",
+      "Req_qty": 2,
+      "scan_qty": 0,
+      "diff_qty": 2
+    },
+    {
+      "scan_job_id": "d3291a77-651f-4b7a-bde2-a929014595b0",
+      "Sku_id": 148893,
+      "Sku_cd": "0011332",
+      "Bar_code": "222",
+      "Req_qty": 3,
+      "scan_qty": 0,
+      "diff_qty": 3
+    }
+  ],
+  "RequireTotal": "5",
+  "CustomerNo": "M1-02G Cahill",
+  "CustomerName": "02G Cahill",
+  "ScanJobId": "d3291a77-651f-4b7a-bde2-a929014595b0",
+  "ErrorCode": 0,
+  "ErrorMessage": ""
+}
