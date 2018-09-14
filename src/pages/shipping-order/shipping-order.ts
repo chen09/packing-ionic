@@ -22,8 +22,11 @@ export class ShippingOrderPage {
   // Attempt to login in through our User service
   query() {
     if (this.number != null && this.number != '') {
-      this.shippingOrder.query(this.number).subscribe((resp) => {
+      this.shippingOrder.queryMock(this.number).subscribe((resp) => {
         console.log(resp);
+        this.navCtrl.push("PackingPage", {
+          res: resp
+        });
       }, (err) => {
 
       });

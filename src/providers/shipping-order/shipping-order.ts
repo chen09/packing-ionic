@@ -43,14 +43,10 @@ export class ShippingOrder {
   constructor(public api: Api) {
   }
 
-  /**
-   * Send a POST request to our login endpoint with the data
-   * the user entered on the form.
-   */
   query(number: string) {
 
     const orig = `{"SHIPPINGORDERNUMBER":"${number}"}`;
-    const sign = this.getSign(orig, this._SECRET);
+    const sign = ShippingOrder.getSign(orig, this._SECRET);
 
     const body = {
       CloudKey: this._CLOUD_KEY,
@@ -63,10 +59,11 @@ export class ShippingOrder {
 
     let seq = this.api.post(this.ShippingOrderScanQuery, body).share();
 
+    var response;
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
-
+        response = res;
       } else {
 
       }
@@ -77,9 +74,11 @@ export class ShippingOrder {
     return seq;
   }
 
-// {"CloudKey":"AmiAuth","Sign":"90A7B2C80C9EE4FDD505C73ABBA308C4","Token":"972342023272170693","PropListString":"{"SHIPPINGORDERNUMBER":"SC60000157"}"}
+  queryMock(number: string) {
+    return this.api.http.get('assets/mock/mock.json').share();
+  }
 
-  getSign(str: string, secret: string): string {
+  private static getSign(str: string, secret: string): string {
     const key = CryptoJS.enc.Utf8.parse(secret);
     const actual = CryptoJS.AES.encrypt(str, key, {mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7}).ciphertext;
     const actual2 = CryptoJS.enc.Base64.stringify(actual, 0);
